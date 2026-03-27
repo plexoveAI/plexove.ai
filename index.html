@@ -101,18 +101,16 @@
             color: #fff;
         }
 
-        /* Main Interface */
+        /* Background Visuals after launch */
         #main-view {
             width: 100%;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             opacity: 0;
             transition: opacity 1s ease;
-        }
-
-        .chat-frame {
-            border: none;
-            width: 100%;
-            height: 100%;
+            text-align: center;
         }
     </style>
 </head>
@@ -120,7 +118,7 @@
 
     <section id="gateway-overlay">
         <div class="portal-card">
-            <img src="Sophisticated%20AI%20Logo%20with%20Angular%20Elements.png" 
+            <img src="Sophisticated AI Logo with Angular Elements.png" 
                  alt="Plexove" 
                  class="brand-identity">
             
@@ -132,27 +130,42 @@
     </section>
 
     <main id="main-view">
-        <iframe
-            src="https://www.chatbase.co/chatbot-iframe/Ccfl1drfY8xSxImHPctSu"
-            class="chat-frame"
-            title="Plexove Intelligence"
-        ></iframe>
+        <div class="status-indicator">
+            <h2 style="color: var(--accent-glow);">Plexove Engine Active</h2>
+            <p style="color: #444;">Interface loaded via Voiceflow Runtime</p>
+        </div>
     </main>
 
-    <script>
-        function unlockExperience() {
-            const overlay = document.getElementById('gateway-overlay');
-            const main = document.getElementById('main-view');
-            
-            overlay.style.opacity = '0';
-            overlay.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                main.style.opacity = '1';
-                document.body.style.overflow = 'auto';
-            }, 700);
-        }
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '69c62d7312a60769b90713ac' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              }
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+
+      function unlockExperience() {
+          const overlay = document.getElementById('gateway-overlay');
+          const main = document.getElementById('main-view');
+          
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+          
+          setTimeout(() => {
+              overlay.style.display = 'none';
+              main.style.opacity = '1';
+              // Automatically open the Voiceflow Chat when Launched
+              window.voiceflow.chat.open();
+          }, 700);
+      }
     </script>
 
 </body>
