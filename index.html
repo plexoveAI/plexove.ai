@@ -25,7 +25,7 @@
             overflow: hidden;
         }
 
-        /* Entrance Overlay */
+        
         #gateway-overlay {
             position: fixed; inset: 0;
             background: radial-gradient(circle at 50% 50%, rgba(58, 134, 255, 0.1) 0%, #000 100%);
@@ -57,30 +57,48 @@
         }
 
         .action-trigger:hover {
-            transform: scale(1.05); background: var(--accent-glow); color: #fff;
+            transform: scale(1.05); background: var(--accent-glow); color: #fff;\
         }
 
-        /* Support Banner */
+        
         .support-banner {
             position: fixed; bottom: 20px; left: 50%;
+
+
+            
             transform: translateX(-50%);
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
             border: 1px solid var(--border-light);
             padding: 12px 24px; border-radius: 50px;
+
+
+            
             display: flex; align-items: center; gap: 20px;
             font-size: 0.85rem; color: #aaa;
             white-space: nowrap; z-index: 100;
             opacity: 0; transition: opacity 1s ease 1s;
         }
 
+
+
+
+        
+
         .support-banner a { color: var(--accent-glow); text-decoration: none; font-weight: 600; }
+
+
+
+        
         .donation-tag { color: #ff4d6d; font-weight: 600; border-left: 1px solid #333; padding-left: 20px; }
 
         #main-view {
             width: 100%; height: 100vh; display: flex;
             justify-content: center; align-items: center;
             opacity: 0; transition: opacity 1s ease;
+
+
+            
         }
     </style>
 </head>
@@ -102,11 +120,24 @@
         <span>Support: <a href="mailto:atharvapandey1911@gmail.com">atharvapandey1911@gmail.com</a></span>
         <span>Call: <a href="tel:+919278079955">+91 9278079955</a></span>
         <span class="donation-tag">❤️ We accept donations</span>
+
+
+
+
+
+
+
+
+
+        
     </div>
 
     <script type="text/javascript">
       (function(d, t) {
           var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+
+
+          
           v.onload = function() {
             window.voiceflow.chat.load({
               verify: { projectID: '69c62d7312a60769b90713ac' },
@@ -115,6 +146,20 @@
             });
           }
           v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
       })(document, 'script');
 
       function unlockExperience() {
@@ -128,6 +173,10 @@
               window.voiceflow.chat.open();
           }, 700);
       }
+
+
+
+        
     </script>
 </body>
 </html>
